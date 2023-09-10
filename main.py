@@ -15,11 +15,14 @@ Here are some improvements to the Python program:
 Here's the improved code:
 
 ```python
+
+
 class User:
     def __init__(self, name, preferences, allergies):
         self.name = name
         self.preferences = preferences
         self.allergies = allergies
+
 
 class Recipe:
     def __init__(self, name, ingredients, nutrition, cook_time):
@@ -27,6 +30,7 @@ class Recipe:
         self.ingredients = ingredients
         self.nutrition = nutrition
         self.cook_time = cook_time
+
 
 class RecipeRecommendationSystem:
     def __init__(self):
@@ -50,16 +54,20 @@ class RecipeRecommendationSystem:
 
 # Main function to demonstrate usage of the AI-Enhanced Personalized Recipe Recommendation System
 
+
 def main():
     recipe_system = RecipeRecommendationSystem()
 
     # Add users
-    recipe_system.add_user("John", {"vegan": True, "gluten-free": True}, {"peanuts": True})
+    recipe_system.add_user(
+        "John", {"vegan": True, "gluten-free": True}, {"peanuts": True})
     recipe_system.add_user("Alice", {"pescatarian": True}, {})
 
     # Add recipes
-    recipe_system.add_recipe("Vegan Curry", ["tofu", "coconut milk", "curry paste"], "Healthy", 30)
-    recipe_system.add_recipe("Gluten-Free Pancakes", ["almond flour", "banana", "maple syrup"], "Low Carb", 20)
+    recipe_system.add_recipe(
+        "Vegan Curry", ["tofu", "coconut milk", "curry paste"], "Healthy", 30)
+    recipe_system.add_recipe(
+        "Gluten-Free Pancakes", ["almond flour", "banana", "maple syrup"], "Low Carb", 20)
 
     # Generate personalized recommendations for user
     user = recipe_system.users[0]
@@ -69,6 +77,7 @@ def main():
     print(f"Recommended recipes for user {user.name}:")
     for recipe in recommendations:
         print(recipe.name)
+
 
 if __name__ == "__main__":
     main()
